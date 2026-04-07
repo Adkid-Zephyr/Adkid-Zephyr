@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/profile-hero.svg" alt="Signal-to-ship lab animated header" width="100%">
+  <img src="https://raw.githubusercontent.com/Adkid-Zephyr/Adkid-Zephyr/main/assets/profile-hero.svg" alt="Signal-to-ship lab animated header" width="100%">
 </p>
 
 <p align="center">
