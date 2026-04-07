@@ -3,9 +3,9 @@
 </p>
 
 <p align="center">
-  <a href="#open-the-system">Open the system</a> ·
-  <a href="#live-panels">Live panels</a> ·
-  <a href="#toolbox">Toolbox</a> ·
+  <a href="#open-the-system">Open the system</a> |
+  <a href="#live-panels">Live panels</a> |
+  <a href="#toolbox">Toolbox</a> |
   <a href="#selected-builds">Selected builds</a>
 </p>
 
