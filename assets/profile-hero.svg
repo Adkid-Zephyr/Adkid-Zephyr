@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="380" viewBox="0 0 1200 380" role="img" aria-labelledby="title desc">
+  <title id="title">Signal-to-Ship Lab</title>
+  <desc id="desc">Animated profile header with a dark grid, moving signal lines, and workflow chips.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#020617"/>
+      <stop offset="0.45" stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+    <radialGradient id="glowA" cx="25%" cy="18%" r="60%">
+      <stop offset="0" stop-color="#38bdf8" stop-opacity="0.65"/>
+      <stop offset="1" stop-color="#38bdf8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowB" cx="82%" cy="78%" r="58%">
+      <stop offset="0" stop-color="#f472b6" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#f472b6" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse">
+      <path d="M 42 0 L 0 0 0 42" fill="none" stroke="#94a3b8" stroke-opacity="0.18" stroke-width="1"/>
+    </pattern>
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <style><![CDATA[
+      .grid { animation: drift 18s linear infinite; }
+      .dash { stroke-dasharray: 16 18; animation: dash 7s linear infinite; }
+      .dash.slow { animation-duration: 10s; }
+      .node { animation: pulse 3.4s ease-in-out infinite; transform-origin: center; }
+      .node:nth-of-type(2) { animation-delay: .45s; }
+      .node:nth-of-type(3) { animation-delay: .9s; }
+      .chip { animation: float 6s ease-in-out infinite; }
+      .chip:nth-of-type(2) { animation-delay: .8s; }
+      .chip:nth-of-type(3) { animation-delay: 1.6s; }
+      .scan { animation: scan 5.5s ease-in-out infinite; }
+      @keyframes drift { from { transform: translate(0,0); } to { transform: translate(-42px,-42px); } }
+      @keyframes dash { to { stroke-dashoffset: -180; } }
+      @keyframes pulse { 0%,100% { opacity: .72; transform: scale(1); } 50% { opacity: 1; transform: scale(1.22); } }
+      @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+      @keyframes scan { 0%,100% { transform: translateX(-18px); opacity: .08; } 50% { transform: translateX(48px); opacity: .22; } }
+    ]]></style>
+  </defs>
+
+  <rect width="1200" height="380" rx="34" fill="url(#bg)"/>
+  <rect width="1200" height="380" rx="34" fill="url(#glowA)"/>
+  <rect width="1200" height="380" rx="34" fill="url(#glowB)"/>
+  <rect class="grid" x="0" y="0" width="1284" height="464" fill="url(#grid)" opacity="0.65"/>
+
+  <g opacity="0.7">
+    <path class="dash" d="M80 260 C220 180 300 310 430 220 S690 120 820 210 1000 278 1130 160" fill="none" stroke="#38bdf8" stroke-width="3" stroke-linecap="round" filter="url(#softGlow)"/>
+    <path class="dash slow" d="M110 125 C250 90 325 150 460 115 S680 80 800 136 965 170 1095 92" fill="none" stroke="#f472b6" stroke-width="2" stroke-linecap="round" filter="url(#softGlow)" opacity="0.9"/>
+  </g>
+
+  <g fill="#e0f2fe" filter="url(#softGlow)">
+    <circle class="node" cx="198" cy="210" r="6"/>
+    <circle class="node" cx="428" cy="220" r="7"/>
+    <circle class="node" cx="818" cy="209" r="6"/>
+    <circle class="node" cx="1040" cy="218" r="5"/>
+  </g>
+
+  <rect class="scan" x="790" y="42" width="150" height="296" rx="75" fill="#ffffff"/>
+
+  <g transform="translate(82 76)">
+    <text x="0" y="0" fill="#93c5fd" font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="18" letter-spacing="5">ADKID-ZEPHYR</text>
+    <text x="0" y="82" fill="#f8fafc" font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="68" font-weight="800" letter-spacing="-2">Signal-to-Ship Lab</text>
+    <text x="4" y="124" fill="#cbd5e1" font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="22">AI workflows / source scoring / useful interfaces / short feedback loops</text>
+  </g>
+
+  <g transform="translate(86 244)" font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="16" font-weight="700">
+    <g class="chip">
+      <rect x="0" y="0" width="132" height="42" rx="21" fill="#0f172a" stroke="#38bdf8" stroke-opacity="0.7"/>
+      <text x="24" y="27" fill="#e0f2fe">Observe</text>
+    </g>
+    <g class="chip">
+      <rect x="154" y="0" width="116" height="42" rx="21" fill="#0f172a" stroke="#a78bfa" stroke-opacity="0.75"/>
+      <text x="185" y="27" fill="#ede9fe">Shape</text>
+    </g>
+    <g class="chip">
+      <rect x="292" y="0" width="104" height="42" rx="21" fill="#0f172a" stroke="#f472b6" stroke-opacity="0.75"/>
+      <text x="324" y="27" fill="#fce7f3">Build</text>
+    </g>
+    <g class="chip">
+      <rect x="418" y="0" width="108" height="42" rx="21" fill="#0f172a" stroke="#22c55e" stroke-opacity="0.75"/>
+      <text x="449" y="27" fill="#dcfce7">Learn</text>
+    </g>
+  </g>
+
+  <g transform="translate(820 72)" opacity="0.92">
+    <rect x="0" y="0" width="286" height="230" rx="26" fill="#020617" fill-opacity="0.68" stroke="#64748b" stroke-opacity="0.45"/>
+    <text x="30" y="48" fill="#e2e8f0" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace" font-size="18">system.trace</text>
+    <text x="30" y="88" fill="#38bdf8" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace" font-size="15">input  : noisy signal</text>
+    <text x="30" y="120" fill="#a78bfa" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace" font-size="15">method : make it testable</text>
+    <text x="30" y="152" fill="#f472b6" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace" font-size="15">output : usable path</text>
+    <text x="30" y="184" fill="#22c55e" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace" font-size="15">loop   : learn faster</text>
+    <rect x="30" y="202" width="92" height="4" rx="2" fill="#38bdf8">
+      <animate attributeName="width" values="44;204;92;244;92" dur="5s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+</svg>
