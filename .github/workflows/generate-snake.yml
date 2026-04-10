@@ -1,4 +1,4 @@
-name: Generate profile motion card
+name: Update README cards
 
 on:
   schedule:
@@ -10,14 +10,12 @@ on:
     paths:
       - ".github/workflows/generate-snake.yml"
       - "README.md"
-      - "assets/profile-hero.svg"
-      - "scripts/generate_profile_card.py"
 
 permissions:
   contents: write
 
 jobs:
-  generate:
+  build:
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
@@ -25,21 +23,26 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - name: Generate stats card
+        uses: readme-tools/github-readme-stats-action@v1
         with:
-          python-version: "3.x"
+          card: stats
+          options: username=${{ github.repository_owner }}&show_icons=true&theme=transparent&hide_border=true&hide=contribs,issues
+          path: profile/stats.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Generate profile motion card
-        run: python scripts/generate_profile_card.py
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PROFILE_USERNAME: ${{ github.repository_owner }}
-
-      - name: Publish profile motion card
-        uses: crazy-max/ghaction-github-pages@v3.1.0
+      - name: Generate top languages card
+        uses: readme-tools/github-readme-stats-action@v1
         with:
-          target_branch: output
-          build_dir: dist
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          card: top-langs
+          options: username=${{ github.repository_owner }}&layout=compact&theme=transparent&hide_border=true&langs_count=6
+          path: profile/top-langs.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit cards
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add profile/*.svg
+          git commit -m "Update README cards" || exit 0
+          git push
