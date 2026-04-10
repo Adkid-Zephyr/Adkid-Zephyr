@@ -284,165 +284,220 @@ def svg_escape(text: str) -> str:
     )
 
 
+def build_smooth_path(points: list[tuple[float, float]]) -> str:
+    if not points:
+        return ""
+    if len(points) == 1:
+        x, y = points[0]
+        return f"M {x:.1f} {y:.1f}"
+
+    path = [f"M {points[0][0]:.1f} {points[0][1]:.1f}"]
+    for index in range(1, len(points) - 1):
+        current = points[index]
+        nxt = points[index + 1]
+        mid_x = (current[0] + nxt[0]) / 2
+        mid_y = (current[1] + nxt[1]) / 2
+        path.append(f"Q {current[0]:.1f} {current[1]:.1f} {mid_x:.1f} {mid_y:.1f}")
+    path.append(
+        f"Q {points[-1][0]:.1f} {points[-1][1]:.1f} {points[-1][0]:.1f} {points[-1][1]:.1f}"
+    )
+    return " ".join(path)
+
+
 def render_svg(metrics: dict[str, Any], theme: str) -> str:
     palettes = {
         "light": {
-            "bg": "#F5F0E7",
-            "panel": "#FBF8F1",
-            "stroke": "#161616",
-            "muted": "#6B6257",
-            "soft": "#D4C8B5",
-            "accent": "#887A67",
-            "ink": "#121212",
-            "inverse": "#FBF8F1",
-            "bar": "#171717",
-            "bar_soft": "#C5B59A",
+            "bg": "#f8fafc",
+            "panel": "#ffffff",
+            "stroke": "#dbe2f1",
+            "muted": "#64748b",
+            "soft": "#edf2fb",
+            "accent": "#6d5efc",
+            "accent_soft": "#8b5cf6",
+            "accent_alt": "#22d3ee",
+            "ink": "#0f172a",
+            "inverse": "#f8fafc",
+            "orb_a": "#c4b5fd",
+            "orb_b": "#7dd3fc",
+            "line": "#94a3b8",
         },
         "dark": {
-            "bg": "#111111",
-            "panel": "#171717",
-            "stroke": "#E8DECF",
-            "muted": "#C0B5A4",
-            "soft": "#5C554D",
-            "accent": "#D6C5A0",
-            "ink": "#F5EFE5",
-            "inverse": "#111111",
-            "bar": "#F1E7D8",
-            "bar_soft": "#6B6257",
+            "bg": "#08111f",
+            "panel": "#0f1728",
+            "stroke": "#203049",
+            "muted": "#8da0bd",
+            "soft": "#13203a",
+            "accent": "#8b5cf6",
+            "accent_soft": "#a78bfa",
+            "accent_alt": "#22d3ee",
+            "ink": "#e7eef9",
+            "inverse": "#08111f",
+            "orb_a": "#6d28d9",
+            "orb_b": "#0284c7",
+            "line": "#334155",
         },
     }
     c = palettes[theme]
 
     chart_values = metrics["monthly_contributions"]
     chart_max = max(chart_values) if max(chart_values) > 0 else 1
-    bar_width = 34
-    bar_gap = 16
-    chart_left = 706
-    base_y = 302
-    usable_height = 126
-    bars = []
-    labels = []
+    chart_left = 688
+    chart_width = 430
+    chart_top = 174
+    chart_base_y = 298
+    chart_height = 108
+    step = chart_width / (len(chart_values) - 1)
+    points: list[tuple[float, float]] = []
 
     for index, value in enumerate(chart_values):
         normalized = value / chart_max
-        height = 12 if value == 0 else int(usable_height * (0.28 + normalized * 0.72))
-        x = chart_left + index * (bar_width + bar_gap)
-        y = base_y - height
-        opacity = 0.24 if value == 0 else 0.92
-        delay = round(index * 0.18, 2)
-        bars.append(
-            f'<rect x="{x}" y="{y}" width="{bar_width}" height="{height}" rx="17" '
-            f'fill="{c["bar"]}" opacity="{opacity}">'
-            f'<animate attributeName="opacity" values="{opacity};1;{opacity}" dur="5.6s" '
-            f'begin="{delay}s" repeatCount="indefinite"/></rect>'
+        x = chart_left + index * step
+        y = chart_base_y - normalized * chart_height
+        points.append((x, y))
+
+    line_path = build_smooth_path(points)
+    area_path = (
+        f"{line_path} L {points[-1][0]:.1f} {chart_base_y:.1f} "
+        f"L {points[0][0]:.1f} {chart_base_y:.1f} Z"
+    )
+
+    peak_index = max(range(len(chart_values)), key=lambda idx: chart_values[idx])
+    latest_index = len(chart_values) - 1
+    peak_point = points[peak_index]
+    latest_point = points[latest_index]
+
+    dot_markup = []
+    for index, (x, y) in enumerate(points):
+        radius = 5 if index in {peak_index, latest_index} else 3.5
+        opacity = 0.96 if chart_values[index] > 0 else 0.34
+        delay = round(index * 0.16, 2)
+        dot_markup.append(
+            f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{radius}" fill="{c["panel"]}" stroke="{c["accent"]}" stroke-width="1.8" opacity="{opacity}">'
+            f'<animate attributeName="opacity" values="{opacity};1;{opacity}" dur="5.4s" begin="{delay}s" repeatCount="indefinite"/></circle>'
         )
-        labels.append(
-            f'<text x="{x + bar_width / 2}" y="330" fill="{c["muted"]}" '
-            f'font-family="Helvetica Neue, Arial, sans-serif" font-size="12" text-anchor="middle" '
-            f'letter-spacing="1.4">{metrics["month_labels"][index]}</text>'
+
+    label_markup = []
+    for index in [0, 3, 6, 9, 11]:
+        x, _ = points[index]
+        label_markup.append(
+            f'<text x="{x:.1f}" y="334" fill="{c["muted"]}" font-family="Inter, Helvetica Neue, Arial, sans-serif" '
+            f'font-size="12" text-anchor="middle" letter-spacing="1.6">{metrics["month_labels"][index]}</text>'
         )
 
-    line_points = []
-    for index, value in enumerate(chart_values):
-        normalized = value / chart_max
-        y = 286 - normalized * 96
-        x = chart_left + index * (bar_width + bar_gap) + bar_width / 2
-        line_points.append(f"{x},{y}")
-
-    chart_polyline = " ".join(line_points)
-    last_x = chart_left + (len(chart_values) - 1) * (bar_width + bar_gap) + bar_width / 2
-    last_y = 286 - (chart_values[-1] / chart_max) * 96
-
-    stats = [
-        ("PUBLIC REPOS", number_text(metrics["public_repos"])),
-        ("FOLLOWERS", number_text(metrics["followers"])),
-        ("12M CONTRIBUTIONS", number_text(metrics["total_contributions"])),
-        ("PEAK MONTH", svg_escape(metrics["peak_month"])),
-    ]
-
-    stat_blocks = []
-    stat_positions = [(74, 176), (320, 176), (74, 254), (320, 254)]
-    for (label, value), (x, y) in zip(stats, stat_positions):
-        stat_blocks.append(
-            f'<g transform="translate({x} {y})">'
-            f'<rect x="0" y="0" width="214" height="64" rx="18" fill="{c["panel"]}" stroke="{c["soft"]}" stroke-width="1.1"/>'
-            f'<text x="18" y="24" fill="{c["muted"]}" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" letter-spacing="2.4">{label}</text>'
-            f'<text x="18" y="49" fill="{c["ink"]}" font-family="Georgia, Times New Roman, serif" font-size="26">{value}</text>'
-            f'</g>'
-        )
+    cadence_summary = f"{metrics['active_months']} active months"
+    last_active = svg_escape(metrics["last_active"])
+    peak_month = svg_escape(metrics["peak_month"])
 
     return f"""<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="430" viewBox="0 0 1200 430" role="img" aria-labelledby="title desc">
   <title id="title">Adkid Zephyr profile motion card</title>
-  <desc id="desc">Daily-updated AI PM and fintech profile card with GitHub profile metrics and a normalized monthly rhythm chart.</desc>
+  <desc id="desc">Daily-updated AI PM and fintech profile card with a spacious Gemini-inspired layout and normalized activity curve.</desc>
   <defs>
+    <linearGradient id="card-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="{c["bg"]}"/>
+      <stop offset="0.55" stop-color="{c["soft"]}"/>
+      <stop offset="1" stop-color="{c["bg"]}"/>
+    </linearGradient>
+    <linearGradient id="area" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="{c["accent_soft"]}" stop-opacity="0.26"/>
+      <stop offset="1" stop-color="{c["accent_alt"]}" stop-opacity="0.02"/>
+    </linearGradient>
+    <linearGradient id="line-gradient" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="{c["accent_soft"]}"/>
+      <stop offset="0.54" stop-color="{c["accent"]}"/>
+      <stop offset="1" stop-color="{c["accent_alt"]}"/>
+    </linearGradient>
+    <filter id="blur-orb" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="28"/>
+    </filter>
     <style><![CDATA[
       .outline {{
         stroke: {c["stroke"]};
-        stroke-width: 1.15;
+        stroke-width: 1;
         fill: none;
         vector-effect: non-scaling-stroke;
       }}
-      .scan {{
-        animation: scan 8s ease-in-out infinite;
+      .trace {{
+        stroke: url(#line-gradient);
+        stroke-width: 3;
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }}
+      .float {{
+        animation: float 8s ease-in-out infinite;
       }}
       .pulse {{
         animation: pulse 3.8s ease-in-out infinite;
       }}
-      @keyframes scan {{
-        0%, 100% {{ transform: translateX(0); opacity: 0.06; }}
-        50% {{ transform: translateX(34px); opacity: 0.18; }}
+      .glow {{
+        animation: glow 7.2s ease-in-out infinite;
+      }}
+      @keyframes float {{
+        0%, 100% {{ transform: translateY(0); opacity: 0.14; }}
+        50% {{ transform: translateY(-12px); opacity: 0.28; }}
       }}
       @keyframes pulse {{
         0%, 100% {{ opacity: 0.45; transform: scale(1); }}
         50% {{ opacity: 1; transform: scale(1.18); }}
       }}
+      @keyframes glow {{
+        0%, 100% {{ opacity: 0.18; transform: translateX(0); }}
+        50% {{ opacity: 0.32; transform: translateX(18px); }}
+      }}
     ]]></style>
   </defs>
 
-  <rect x="10" y="10" width="1180" height="410" rx="28" fill="{c["bg"]}"/>
-  <rect x="10" y="10" width="1180" height="410" rx="28" class="outline"/>
-  <rect x="34" y="34" width="1132" height="362" rx="22" fill="{c["panel"]}" stroke="{c["soft"]}" stroke-width="1.1"/>
-
-  <line x1="590" y1="76" x2="590" y2="350" class="outline" opacity="0.22"/>
-  <line x1="74" y1="84" x2="522" y2="84" class="outline" opacity="0.64"/>
-  <line x1="706" y1="84" x2="1086" y2="84" class="outline" opacity="0.54"/>
-  <rect x="864" y="110" width="170" height="170" rx="85" fill="{c["bar"]}" opacity="0.04" class="scan"/>
+  <rect x="10" y="10" width="1180" height="410" rx="30" fill="url(#card-bg)"/>
+  <rect x="10" y="10" width="1180" height="410" rx="30" class="outline"/>
+  <circle cx="928" cy="154" r="116" fill="{c["orb_a"]}" opacity="0.2" filter="url(#blur-orb)" class="float"/>
+  <circle cx="1004" cy="240" r="76" fill="{c["orb_b"]}" opacity="0.13" filter="url(#blur-orb)" class="glow"/>
+  <rect x="52" y="54" width="420" height="300" rx="28" fill="{c["panel"]}" opacity="0.86" stroke="{c["stroke"]}" stroke-width="1"/>
+  <rect x="650" y="54" width="500" height="300" rx="28" fill="{c["panel"]}" opacity="0.72" stroke="{c["stroke"]}" stroke-width="1"/>
 
   <g transform="translate(74 76)">
-    <text x="0" y="0" fill="{c["muted"]}" font-family="Helvetica Neue, Arial, sans-serif" font-size="14" letter-spacing="4">CURRENT MOTION</text>
-    <text x="0" y="64" fill="{c["ink"]}" font-family="Georgia, Times New Roman, serif" font-size="48">AI PM / Fintech</text>
-    <text x="0" y="100" fill="{c["muted"]}" font-family="Helvetica Neue, Arial, sans-serif" font-size="18">Minimal signal, daily updated, calibrated to your own pace.</text>
+    <text x="0" y="0" fill="{c["muted"]}" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13" letter-spacing="4">CURRENT FOCUS</text>
+    <text x="0" y="54" fill="{c["ink"]}" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="44" font-weight="600">AI PM</text>
+    <text x="0" y="98" fill="{c["ink"]}" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="38" font-weight="500">for Fintech</text>
+    <text x="0" y="132" fill="{c["muted"]}" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="16">Cleaner decision flows, trust-aware experiences, and useful AI interfaces.</text>
+    <rect x="0" y="162" width="156" height="78" rx="22" fill="{c["soft"]}" opacity="0.72" stroke="{c["stroke"]}" stroke-width="1"/>
+    <text x="20" y="188" fill="{c["muted"]}" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="12" letter-spacing="2.2">PUBLIC REPOS</text>
+    <text x="20" y="224" fill="{c["ink"]}" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="34" font-weight="600">{number_text(metrics["public_repos"])}</text>
+    <rect x="176" y="162" width="156" height="78" rx="22" fill="{c["soft"]}" opacity="0.72" stroke="{c["stroke"]}" stroke-width="1"/>
+    <text x="196" y="188" fill="{c["muted"]}" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="12" letter-spacing="2.2">FOLLOWERS</text>
+    <text x="196" y="224" fill="{c["ink"]}" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="34" font-weight="600">{number_text(metrics["followers"])}</text>
+    <text x="0" y="272" fill="{c["muted"]}" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13" letter-spacing="2">12M CONTRIBUTIONS  {number_text(metrics["total_contributions"])}</text>
+    <text x="0" y="298" fill="{c["muted"]}" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13" letter-spacing="2">LAST ACTIVE  {last_active}</text>
+    <g transform="translate(0 314)">
+      <rect x="0" y="0" width="108" height="32" rx="16" fill="{c["ink"]}"/>
+      <text x="27" y="21" fill="{c["inverse"]}" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="12" letter-spacing="2">AI PM</text>
+      <rect x="120" y="0" width="120" height="32" rx="16" fill="{c["panel"]}" stroke="{c["stroke"]}" stroke-width="1"/>
+      <text x="150" y="21" fill="{c["muted"]}" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="12" letter-spacing="1.8">FINTECH</text>
+    </g>
   </g>
 
-  {''.join(stat_blocks)}
-
-  <g transform="translate(706 76)">
-    <text x="0" y="0" fill="{c["muted"]}" font-family="Helvetica Neue, Arial, sans-serif" font-size="14" letter-spacing="4">RHYTHM LEDGER</text>
-    <text x="0" y="44" fill="{c["ink"]}" font-family="Georgia, Times New Roman, serif" font-size="36">Relative monthly rhythm</text>
-    <text x="0" y="74" fill="{c["muted"]}" font-family="Helvetica Neue, Arial, sans-serif" font-size="16">Normalized to your strongest month so sparse activity still reads as design, not absence.</text>
-    <text x="0" y="108" fill="{c["muted"]}" font-family="Helvetica Neue, Arial, sans-serif" font-size="14" letter-spacing="2.6">ACTIVE MONTHS</text>
-    <text x="0" y="138" fill="{c["ink"]}" font-family="Georgia, Times New Roman, serif" font-size="28">{metrics["active_months"]} / 12</text>
-    <text x="166" y="108" fill="{c["muted"]}" font-family="Helvetica Neue, Arial, sans-serif" font-size="14" letter-spacing="2.6">LAST ACTIVE</text>
-    <text x="166" y="138" fill="{c["ink"]}" font-family="Georgia, Times New Roman, serif" font-size="28">{svg_escape(metrics["last_active"])}</text>
-    <text x="0" y="370" fill="{c["muted"]}" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" letter-spacing="2.4">UPDATED {metrics["generated_on"]}</text>
-    <text x="230" y="370" fill="{c["muted"]}" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" letter-spacing="2.4">PUBLIC EVENTS / 30D {metrics["recent_events_30d"]}</text>
+  <g transform="translate(688 78)">
+    <text x="0" y="0" fill="{c["muted"]}" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13" letter-spacing="4">ACTIVITY CADENCE</text>
+    <text x="0" y="44" fill="{c["ink"]}" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="32" font-weight="500">Personal cadence</text>
+    <text x="0" y="74" fill="{c["muted"]}" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15">A normalized monthly view, tuned to your own pace.</text>
+    <text x="0" y="108" fill="{c["muted"]}" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13" letter-spacing="2">PEAK MONTH  {peak_month}</text>
+    <text x="248" y="108" fill="{c["muted"]}" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13" letter-spacing="2">{cadence_summary.upper()}</text>
   </g>
 
-  <g opacity="0.92">
-    <polyline points="{chart_polyline}" fill="none" stroke="{c["bar_soft"]}" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-    {''.join(bars)}
-    {''.join(labels)}
-    <circle cx="{last_x}" cy="{last_y}" r="6" fill="{c["accent"]}" class="pulse"/>
-    <line x1="{last_x}" y1="{last_y}" x2="{last_x}" y2="314" class="outline" opacity="0.18"/>
-  </g>
-
-  <g transform="translate(74 344)">
-    <rect x="0" y="0" width="112" height="32" rx="16" fill="{c["ink"]}"/>
-    <text x="28" y="21" fill="{c["inverse"]}" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" letter-spacing="2">AI PM</text>
-    <rect x="126" y="0" width="118" height="32" rx="16" fill="none" stroke="{c["stroke"]}" stroke-width="1.1"/>
-    <text x="153" y="21" fill="{c["ink"]}" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" letter-spacing="2">FINTECH</text>
-    <rect x="258" y="0" width="180" height="32" rx="16" fill="none" stroke="{c["soft"]}" stroke-width="1.1"/>
-    <text x="286" y="21" fill="{c["muted"]}" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" letter-spacing="1.5">PRODUCT SYSTEMS</text>
+  <g>
+    <path d="{area_path}" fill="url(#area)"/>
+    <path d="{line_path}" class="trace"/>
+    {''.join(dot_markup)}
+    {''.join(label_markup)}
+    <line x1="{peak_point[0]:.1f}" y1="{peak_point[1]:.1f}" x2="{peak_point[0]:.1f}" y2="320" class="outline" opacity="0.24"/>
+    <line x1="{latest_point[0]:.1f}" y1="{latest_point[1]:.1f}" x2="{latest_point[0]:.1f}" y2="320" class="outline" opacity="0.18"/>
+    <g transform="translate({peak_point[0] - 38:.1f} {peak_point[1] - 52:.1f})">
+      <rect x="0" y="0" width="96" height="32" rx="16" fill="{c["panel"]}" stroke="{c["stroke"]}" stroke-width="1"/>
+      <text x="18" y="21" fill="{c["muted"]}" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="12" letter-spacing="1.8">PEAK</text>
+    </g>
+    <g transform="translate({latest_point[0] - 54:.1f} {latest_point[1] + 20:.1f})">
+      <rect x="0" y="0" width="132" height="32" rx="16" fill="{c["panel"]}" stroke="{c["stroke"]}" stroke-width="1"/>
+      <text x="18" y="21" fill="{c["muted"]}" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="12" letter-spacing="1.4">UPDATED {metrics["generated_on"]}</text>
+    </g>
   </g>
 </svg>
 """

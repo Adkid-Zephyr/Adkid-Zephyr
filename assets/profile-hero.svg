@@ -1,103 +1,103 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
-  <title id="title">Adkid Zephyr AI PM and Fintech profile hero</title>
-  <desc id="desc">Minimal animated profile hero in a luxury editorial style, focused on AI product management and fintech systems.</desc>
+  <title id="title">Adkid Zephyr AI PM and fintech profile hero</title>
+  <desc id="desc">Soft gradient profile hero with a spacious Gemini-inspired layout for AI product and fintech work.</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#f6f1e8"/>
-      <stop offset="1" stop-color="#efe8dc"/>
+      <stop offset="0" stop-color="#f8fafc"/>
+      <stop offset="0.55" stop-color="#f5f3ff"/>
+      <stop offset="1" stop-color="#eef6ff"/>
     </linearGradient>
-    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#fbf8f1"/>
-      <stop offset="1" stop-color="#f2ece2"/>
+    <linearGradient id="orb" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7c3aed" stop-opacity="0.34"/>
+      <stop offset="0.5" stop-color="#4f46e5" stop-opacity="0.24"/>
+      <stop offset="1" stop-color="#06b6d4" stop-opacity="0.12"/>
     </linearGradient>
+    <linearGradient id="trace" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="0.52" stop-color="#6366f1"/>
+      <stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+    <filter id="blur-xl" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="34"/>
+    </filter>
     <style><![CDATA[
       .hairline {
-        stroke: #111111;
-        stroke-width: 1.2;
         fill: none;
+        stroke: #d6d9e6;
+        stroke-width: 1;
         vector-effect: non-scaling-stroke;
       }
-      .soft-line {
-        stroke: #8b7d69;
-        stroke-width: 1.2;
+      .panel {
+        fill: rgba(255,255,255,0.58);
+        stroke: #e6e9f4;
+        stroke-width: 1;
+      }
+      .trace {
+        stroke: url(#trace);
+        stroke-width: 2.6;
         fill: none;
-        stroke-dasharray: 7 12;
-        animation: drift 9s linear infinite;
+        stroke-linecap: round;
+        stroke-dasharray: 8 12;
+        animation: stream 10s linear infinite;
       }
-      .pulse-dot {
-        animation: pulse 3.2s ease-in-out infinite;
+      .pulse {
+        animation: pulse 4.2s ease-in-out infinite;
+        transform-origin: center;
       }
-      .glide {
-        animation: glide 7s ease-in-out infinite;
+      .float {
+        animation: float 7.5s ease-in-out infinite;
       }
-      .ticker {
-        animation: ticker 6.8s ease-in-out infinite;
+      .shine {
+        animation: shine 6.2s ease-in-out infinite;
       }
-      @keyframes drift {
-        to { stroke-dashoffset: -190; }
+      @keyframes stream {
+        to { stroke-dashoffset: -180; }
       }
       @keyframes pulse {
-        0%, 100% { opacity: 0.35; transform: scale(1); }
-        50% { opacity: 0.95; transform: scale(1.18); }
+        0%, 100% { opacity: 0.56; transform: scale(1); }
+        50% { opacity: 1; transform: scale(1.12); }
       }
-      @keyframes glide {
-        0%, 100% { transform: translateX(0); opacity: 0.12; }
-        50% { transform: translateX(36px); opacity: 0.28; }
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
       }
-      @keyframes ticker {
-        0%, 100% { transform: translateX(0); }
-        50% { transform: translateX(18px); }
+      @keyframes shine {
+        0%, 100% { opacity: 0.16; transform: translateX(0); }
+        50% { opacity: 0.3; transform: translateX(18px); }
       }
     ]]></style>
   </defs>
 
-  <rect x="10" y="10" width="1180" height="340" rx="28" fill="url(#bg)"/>
-  <rect x="10" y="10" width="1180" height="340" rx="28" class="hairline"/>
-  <rect x="36" y="36" width="1128" height="288" rx="22" fill="url(#panel)" stroke="#cabda7" stroke-width="1.1"/>
+  <rect x="10" y="10" width="1180" height="340" rx="32" fill="url(#bg)"/>
+  <rect x="10" y="10" width="1180" height="340" rx="32" class="hairline"/>
 
-  <line x1="84" y1="96" x2="530" y2="96" class="hairline" opacity="0.7"/>
-  <line x1="84" y1="272" x2="420" y2="272" class="hairline" opacity="0.42"/>
-  <line x1="676" y1="70" x2="1082" y2="70" class="hairline" opacity="0.52"/>
-  <path d="M700 194 C786 166 842 208 904 174 S1020 132 1084 158" class="soft-line"/>
-  <rect x="840" y="92" width="188" height="190" rx="94" fill="#111111" opacity="0.04" class="glide"/>
+  <circle cx="930" cy="132" r="126" fill="url(#orb)" filter="url(#blur-xl)" class="float"/>
+  <circle cx="1020" cy="232" r="88" fill="#22d3ee" opacity="0.08" filter="url(#blur-xl)"/>
 
-  <g transform="translate(84 88)">
-    <text x="0" y="0" fill="#171717" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" letter-spacing="6">ADKID ZEPHYR</text>
-    <text x="0" y="90" fill="#111111" font-family="Georgia, Times New Roman, serif" font-size="74">AI PM / Fintech</text>
-    <text x="3" y="132" fill="#544d43" font-family="Helvetica Neue, Arial, sans-serif" font-size="22">Product systems for decision quality, risk-aware execution, and clear interfaces.</text>
+  <path d="M674 206 C758 156 862 148 944 182 C1008 208 1056 198 1112 166" class="trace"/>
+  <circle cx="944" cy="182" r="6" fill="#6366f1" class="pulse"/>
+
+  <g transform="translate(88 84)">
+    <text x="0" y="0" fill="#55607a" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15" letter-spacing="5">ADKID ZEPHYR</text>
+    <text x="0" y="90" fill="#111827" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="70" font-weight="600">AI PM</text>
+    <text x="0" y="150" fill="#111827" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="52" font-weight="500">for Fintech</text>
   </g>
 
-  <g transform="translate(86 286)">
-    <rect x="0" y="-24" width="132" height="34" rx="17" fill="#111111"/>
-    <text x="26" y="-2" fill="#f7f3ec" font-family="Helvetica Neue, Arial, sans-serif" font-size="14" letter-spacing="2">AI PM</text>
-    <rect x="146" y="-24" width="136" height="34" rx="17" fill="none" stroke="#111111" stroke-width="1.1"/>
-    <text x="176" y="-2" fill="#111111" font-family="Helvetica Neue, Arial, sans-serif" font-size="14" letter-spacing="2">FINTECH</text>
-    <rect x="310" y="-24" width="196" height="34" rx="17" fill="none" stroke="#8b7d69" stroke-width="1.1"/>
-    <text x="338" y="-2" fill="#5f5649" font-family="Helvetica Neue, Arial, sans-serif" font-size="14" letter-spacing="1.6">PRODUCT SYSTEMS</text>
+  <g transform="translate(88 300)">
+    <rect x="0" y="-22" width="116" height="34" rx="17" fill="#121826"/>
+    <text x="28" y="0" fill="#f8fafc" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13" letter-spacing="2">AI PM</text>
+    <rect x="128" y="-22" width="126" height="34" rx="17" class="panel"/>
+    <text x="160" y="0" fill="#3f4c67" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13" letter-spacing="1.8">FINTECH</text>
   </g>
 
-  <g transform="translate(706 104)">
-    <text x="0" y="0" fill="#111111" font-family="Helvetica Neue, Arial, sans-serif" font-size="14" letter-spacing="4">PROFILE CANVAS</text>
-    <text x="0" y="64" fill="#111111" font-family="Georgia, Times New Roman, serif" font-size="44">Measured motion.</text>
-    <text x="0" y="102" fill="#5a5247" font-family="Helvetica Neue, Arial, sans-serif" font-size="18">Strategy, product judgement, and interface clarity over noise.</text>
-    <line x1="0" y1="132" x2="320" y2="132" class="hairline" opacity="0.55"/>
-    <g transform="translate(0 164)">
-      <text x="0" y="0" fill="#111111" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" letter-spacing="2">01</text>
-      <text x="38" y="0" fill="#5f5649" font-family="Helvetica Neue, Arial, sans-serif" font-size="16">AI product strategy</text>
-      <text x="0" y="34" fill="#111111" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" letter-spacing="2">02</text>
-      <text x="38" y="34" fill="#5f5649" font-family="Helvetica Neue, Arial, sans-serif" font-size="16">Fintech workflow design</text>
-      <text x="0" y="68" fill="#111111" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" letter-spacing="2">03</text>
-      <text x="38" y="68" fill="#5f5649" font-family="Helvetica Neue, Arial, sans-serif" font-size="16">Operator-first interfaces</text>
-    </g>
-  </g>
-
-  <g transform="translate(1046 76)">
-    <circle cx="0" cy="0" r="6" fill="#111111" class="pulse-dot"/>
-    <line x1="-156" y1="0" x2="-18" y2="0" class="hairline" opacity="0.45"/>
-  </g>
-
-  <g transform="translate(870 300)" class="ticker">
-    <line x1="0" y1="0" x2="174" y2="0" class="hairline" opacity="0.5"/>
-    <circle cx="174" cy="0" r="4" fill="#8b7d69"/>
+  <g transform="translate(734 76)">
+    <rect x="0" y="0" width="356" height="208" rx="28" class="panel"/>
+    <rect x="24" y="24" width="110" height="28" rx="14" fill="#ffffff" opacity="0.88"/>
+    <text x="42" y="42" fill="#5f6b86" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="12" letter-spacing="2.4">FOCUS</text>
+    <text x="24" y="98" fill="#111827" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="34" font-weight="500">Clear product logic.</text>
+    <text x="24" y="132" fill="#5d667a" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="17">AI-native workflows, better judgment, and quieter interfaces.</text>
+    <line x1="24" y1="164" x2="332" y2="164" class="hairline"/>
+    <text x="24" y="192" fill="#6f7891" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14" letter-spacing="1.6">Strategy  /  Trust  /  Operator Experience</text>
+    <rect x="264" y="18" width="58" height="58" rx="29" fill="#ffffff" opacity="0.48" class="shine"/>
   </g>
 </svg>
