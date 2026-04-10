@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="430" viewBox="0 0 1200 430" role="img" aria-labelledby="title desc">
+  <title id="title">Adkid Zephyr profile motion card</title>
+  <desc id="desc">Daily-updated AI PM and fintech profile card with a spacious Gemini-inspired layout and normalized activity curve.</desc>
+  <defs>
+    <linearGradient id="card-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#08111f"/>
+      <stop offset="0.55" stop-color="#13203a"/>
+      <stop offset="1" stop-color="#08111f"/>
+    </linearGradient>
+    <linearGradient id="area" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#a78bfa" stop-opacity="0.26"/>
+      <stop offset="1" stop-color="#22d3ee" stop-opacity="0.02"/>
+    </linearGradient>
+    <linearGradient id="line-gradient" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#a78bfa"/>
+      <stop offset="0.54" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+    <filter id="blur-orb" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="28"/>
+    </filter>
+    <style><![CDATA[
+      .outline {
+        stroke: #203049;
+        stroke-width: 1;
+        fill: none;
+        vector-effect: non-scaling-stroke;
+      }
+      .trace {
+        stroke: url(#line-gradient);
+        stroke-width: 3;
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .float {
+        animation: float 8s ease-in-out infinite;
+      }
+      .pulse {
+        animation: pulse 3.8s ease-in-out infinite;
+      }
+      .glow {
+        animation: glow 7.2s ease-in-out infinite;
+      }
+      @keyframes float {
+        0%, 100% { transform: translateY(0); opacity: 0.14; }
+        50% { transform: translateY(-12px); opacity: 0.28; }
+      }
+      @keyframes pulse {
+        0%, 100% { opacity: 0.45; transform: scale(1); }
+        50% { opacity: 1; transform: scale(1.18); }
+      }
+      @keyframes glow {
+        0%, 100% { opacity: 0.18; transform: translateX(0); }
+        50% { opacity: 0.32; transform: translateX(18px); }
+      }
+    ]]></style>
+  </defs>
+
+  <rect x="10" y="10" width="1180" height="410" rx="30" fill="url(#card-bg)"/>
+  <rect x="10" y="10" width="1180" height="410" rx="30" class="outline"/>
+  <circle cx="928" cy="154" r="116" fill="#6d28d9" opacity="0.2" filter="url(#blur-orb)" class="float"/>
+  <circle cx="1004" cy="240" r="76" fill="#0284c7" opacity="0.13" filter="url(#blur-orb)" class="glow"/>
+  <rect x="52" y="54" width="420" height="300" rx="28" fill="#0f1728" opacity="0.86" stroke="#203049" stroke-width="1"/>
+  <rect x="650" y="54" width="500" height="300" rx="28" fill="#0f1728" opacity="0.72" stroke="#203049" stroke-width="1"/>
+
+  <g transform="translate(74 76)">
+    <text x="0" y="0" fill="#8da0bd" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13" letter-spacing="4">CURRENT FOCUS</text>
+    <text x="0" y="54" fill="#e7eef9" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="44" font-weight="600">AI PM</text>
+    <text x="0" y="98" fill="#e7eef9" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="38" font-weight="500">for Fintech</text>
+    <text x="0" y="132" fill="#8da0bd" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="16">Cleaner decision flows, trust-aware experiences, and useful AI interfaces.</text>
+    <rect x="0" y="162" width="156" height="78" rx="22" fill="#13203a" opacity="0.72" stroke="#203049" stroke-width="1"/>
+    <text x="20" y="188" fill="#8da0bd" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="12" letter-spacing="2.2">PUBLIC REPOS</text>
+    <text x="20" y="224" fill="#e7eef9" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="34" font-weight="600">15</text>
+    <rect x="176" y="162" width="156" height="78" rx="22" fill="#13203a" opacity="0.72" stroke="#203049" stroke-width="1"/>
+    <text x="196" y="188" fill="#8da0bd" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="12" letter-spacing="2.2">FOLLOWERS</text>
+    <text x="196" y="224" fill="#e7eef9" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="34" font-weight="600">110</text>
+    <text x="0" y="272" fill="#8da0bd" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13" letter-spacing="2">12M CONTRIBUTIONS  100</text>
+    <text x="0" y="298" fill="#8da0bd" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13" letter-spacing="2">LAST ACTIVE  2026.04.07</text>
+    <g transform="translate(0 314)">
+      <rect x="0" y="0" width="108" height="32" rx="16" fill="#e7eef9"/>
+      <text x="27" y="21" fill="#08111f" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="12" letter-spacing="2">AI PM</text>
+      <rect x="120" y="0" width="120" height="32" rx="16" fill="#0f1728" stroke="#203049" stroke-width="1"/>
+      <text x="150" y="21" fill="#8da0bd" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="12" letter-spacing="1.8">FINTECH</text>
+    </g>
+  </g>
+
+  <g transform="translate(688 78)">
+    <text x="0" y="0" fill="#8da0bd" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13" letter-spacing="4">ACTIVITY CADENCE</text>
+    <text x="0" y="44" fill="#e7eef9" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="32" font-weight="500">Personal cadence</text>
+    <text x="0" y="74" fill="#8da0bd" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15">A normalized monthly view, tuned to your own pace.</text>
+    <text x="0" y="108" fill="#8da0bd" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13" letter-spacing="2">PEAK MONTH  AUG 2025</text>
+    <text x="248" y="108" fill="#8da0bd" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13" letter-spacing="2">4 ACTIVE MONTHS</text>
+  </g>
+
+  <g>
+    <path d="M 688.0 298.0 Q 727.1 298.0 746.6 298.0 Q 766.2 298.0 785.7 244.0 Q 805.3 190.0 824.8 229.5 Q 844.4 269.0 863.9 283.5 Q 883.5 298.0 903.0 298.0 Q 922.5 298.0 942.1 298.0 Q 961.6 298.0 981.2 298.0 Q 1000.7 298.0 1020.3 298.0 Q 1039.8 298.0 1059.4 251.9 Q 1078.9 205.8 1098.5 234.8 Q 1118.0 263.8 1118.0 263.8 L 1118.0 298.0 L 688.0 298.0 Z" fill="url(#area)"/>
+    <path d="M 688.0 298.0 Q 727.1 298.0 746.6 298.0 Q 766.2 298.0 785.7 244.0 Q 805.3 190.0 824.8 229.5 Q 844.4 269.0 863.9 283.5 Q 883.5 298.0 903.0 298.0 Q 922.5 298.0 942.1 298.0 Q 961.6 298.0 981.2 298.0 Q 1000.7 298.0 1020.3 298.0 Q 1039.8 298.0 1059.4 251.9 Q 1078.9 205.8 1098.5 234.8 Q 1118.0 263.8 1118.0 263.8" class="trace"/>
+    <circle cx="688.0" cy="298.0" r="3.5" fill="#0f1728" stroke="#8b5cf6" stroke-width="1.8" opacity="0.34"><animate attributeName="opacity" values="0.34;1;0.34" dur="5.4s" begin="0.0s" repeatCount="indefinite"/></circle><circle cx="727.1" cy="298.0" r="3.5" fill="#0f1728" stroke="#8b5cf6" stroke-width="1.8" opacity="0.34"><animate attributeName="opacity" values="0.34;1;0.34" dur="5.4s" begin="0.16s" repeatCount="indefinite"/></circle><circle cx="766.2" cy="298.0" r="3.5" fill="#0f1728" stroke="#8b5cf6" stroke-width="1.8" opacity="0.34"><animate attributeName="opacity" values="0.34;1;0.34" dur="5.4s" begin="0.32s" repeatCount="indefinite"/></circle><circle cx="805.3" cy="190.0" r="5" fill="#0f1728" stroke="#8b5cf6" stroke-width="1.8" opacity="0.96"><animate attributeName="opacity" values="0.96;1;0.96" dur="5.4s" begin="0.48s" repeatCount="indefinite"/></circle><circle cx="844.4" cy="269.0" r="3.5" fill="#0f1728" stroke="#8b5cf6" stroke-width="1.8" opacity="0.96"><animate attributeName="opacity" values="0.96;1;0.96" dur="5.4s" begin="0.64s" repeatCount="indefinite"/></circle><circle cx="883.5" cy="298.0" r="3.5" fill="#0f1728" stroke="#8b5cf6" stroke-width="1.8" opacity="0.34"><animate attributeName="opacity" values="0.34;1;0.34" dur="5.4s" begin="0.8s" repeatCount="indefinite"/></circle><circle cx="922.5" cy="298.0" r="3.5" fill="#0f1728" stroke="#8b5cf6" stroke-width="1.8" opacity="0.34"><animate attributeName="opacity" values="0.34;1;0.34" dur="5.4s" begin="0.96s" repeatCount="indefinite"/></circle><circle cx="961.6" cy="298.0" r="3.5" fill="#0f1728" stroke="#8b5cf6" stroke-width="1.8" opacity="0.34"><animate attributeName="opacity" values="0.34;1;0.34" dur="5.4s" begin="1.12s" repeatCount="indefinite"/></circle><circle cx="1000.7" cy="298.0" r="3.5" fill="#0f1728" stroke="#8b5cf6" stroke-width="1.8" opacity="0.34"><animate attributeName="opacity" values="0.34;1;0.34" dur="5.4s" begin="1.28s" repeatCount="indefinite"/></circle><circle cx="1039.8" cy="298.0" r="3.5" fill="#0f1728" stroke="#8b5cf6" stroke-width="1.8" opacity="0.34"><animate attributeName="opacity" values="0.34;1;0.34" dur="5.4s" begin="1.44s" repeatCount="indefinite"/></circle><circle cx="1078.9" cy="205.8" r="3.5" fill="#0f1728" stroke="#8b5cf6" stroke-width="1.8" opacity="0.96"><animate attributeName="opacity" values="0.96;1;0.96" dur="5.4s" begin="1.6s" repeatCount="indefinite"/></circle><circle cx="1118.0" cy="263.8" r="5" fill="#0f1728" stroke="#8b5cf6" stroke-width="1.8" opacity="0.96"><animate attributeName="opacity" values="0.96;1;0.96" dur="5.4s" begin="1.76s" repeatCount="indefinite"/></circle>
+    <text x="688.0" y="334" fill="#8da0bd" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="12" text-anchor="middle" letter-spacing="1.6">MAY</text><text x="805.3" y="334" fill="#8da0bd" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="12" text-anchor="middle" letter-spacing="1.6">AUG</text><text x="922.5" y="334" fill="#8da0bd" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="12" text-anchor="middle" letter-spacing="1.6">NOV</text><text x="1039.8" y="334" fill="#8da0bd" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="12" text-anchor="middle" letter-spacing="1.6">FEB</text><text x="1118.0" y="334" fill="#8da0bd" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="12" text-anchor="middle" letter-spacing="1.6">APR</text>
+    <line x1="805.3" y1="190.0" x2="805.3" y2="320" class="outline" opacity="0.24"/>
+    <line x1="1118.0" y1="263.8" x2="1118.0" y2="320" class="outline" opacity="0.18"/>
+    <g transform="translate(767.3 138.0)">
+      <rect x="0" y="0" width="96" height="32" rx="16" fill="#0f1728" stroke="#203049" stroke-width="1"/>
+      <text x="18" y="21" fill="#8da0bd" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="12" letter-spacing="1.8">PEAK</text>
+    </g>
+    <g transform="translate(1064.0 283.8)">
+      <rect x="0" y="0" width="132" height="32" rx="16" fill="#0f1728" stroke="#203049" stroke-width="1"/>
+      <text x="18" y="21" fill="#8da0bd" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="12" letter-spacing="1.4">UPDATED 2026.04.10</text>
+    </g>
+  </g>
+</svg>
