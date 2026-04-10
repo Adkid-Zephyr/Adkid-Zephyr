@@ -1,4 +1,4 @@
-name: Generate contribution snake
+name: Generate profile motion card
 
 on:
   schedule:
@@ -10,6 +10,8 @@ on:
     paths:
       - ".github/workflows/generate-snake.yml"
       - "README.md"
+      - "assets/profile-hero.svg"
+      - "scripts/generate_profile_card.py"
 
 permissions:
   contents: write
@@ -20,15 +22,21 @@ jobs:
     timeout-minutes: 10
 
     steps:
-      - name: Generate contribution snake
-        uses: Platane/snk/svg-only@v3
-        with:
-          github_user_name: ${{ github.repository_owner }}
-          outputs: |
-            dist/github-contribution-grid-snake.svg
-            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+      - name: Check out repository
+        uses: actions/checkout@v4
 
-      - name: Publish contribution snake
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Generate profile motion card
+        run: python scripts/generate_profile_card.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PROFILE_USERNAME: ${{ github.repository_owner }}
+
+      - name: Publish profile motion card
         uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
           target_branch: output
