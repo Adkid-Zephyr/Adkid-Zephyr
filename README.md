@@ -9,11 +9,11 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/anuraghazra/github-readme-stats">
-    <img height="170" src="./profile/stats.svg" alt="GitHub stats card">
+  <a href="https://github.com/vn7n24fzkq/github-profile-summary-cards">
+    <img height="170" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=Adkid-Zephyr&theme=transparent" alt="GitHub stats card">
   </a>
-  <a href="https://github.com/anuraghazra/github-readme-stats">
-    <img height="170" src="./profile/top-langs.svg" alt="Top languages card">
+  <a href="https://github.com/vn7n24fzkq/github-profile-summary-cards">
+    <img height="170" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Adkid-Zephyr&theme=transparent" alt="Repos per language card">
   </a>
 </p>
 
