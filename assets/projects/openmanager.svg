@@ -1,0 +1,22 @@
+<svg width="570" height="220" viewBox="0 0 570 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="570" y2="220" gradientUnits="userSpaceOnUse"><stop stop-color="#070B13"/><stop offset="1" stop-color="#0D1020"/></linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(510 20) rotate(130) scale(230 180)"><stop stop-color="#60A5FA" stop-opacity="0.17"/><stop offset="1" stop-color="#60A5FA" stop-opacity="0"/></radialGradient>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#94A3B8" stroke-opacity="0.035"/></pattern>
+  </defs>
+  <rect x="1" y="1" width="568" height="218" rx="16" fill="url(#bg)"/>
+  <rect x="1" y="1" width="568" height="218" rx="16" fill="url(#grid)"/>
+  <rect x="1" y="1" width="568" height="218" rx="16" fill="url(#glow)"/>
+  <rect x="1" y="1" width="568" height="218" rx="16" stroke="#60A5FA" stroke-opacity="0.42" stroke-width="2"/>
+  <path d="M1 47H569" stroke="#1E293B"/>
+  <circle cx="22" cy="24" r="4" fill="#60A5FA"/><text x="36" y="29" fill="#64748B" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12">~/builds/OpenManager</text>
+  <text x="525" y="33" fill="#60A5FA" fill-opacity="0.3" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="27" font-weight="800">02</text>
+  <text x="24" y="88" fill="#F8FAFC" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="23" font-weight="750">OpenManager</text>
+  <text x="24" y="121" fill="#94A3B8" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="14">Local-first project workspace</text>
+  <text x="24" y="143" fill="#94A3B8" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="14">manager built for OpenClaw.</text>
+  <rect x="24" y="171" width="112" height="26" rx="13" fill="#60A5FA" fill-opacity="0.1" stroke="#60A5FA" stroke-opacity="0.35"/>
+  <text x="80" y="188" fill="#60A5FA" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="700" text-anchor="middle">LOCAL FIRST</text>
+  <text x="370" y="189" fill="#64748B" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12">JavaScript</text>
+  <path d="M451 180.5L455 181.1L457 177L459 181.1L463 180.5L460 183.5L461 188L457 185.8L453 188L454 183.5L451 180.5Z" fill="#60A5FA"/>
+  <text x="469" y="189" fill="#CBD5E1" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12">1 STARS</text>
+</svg>

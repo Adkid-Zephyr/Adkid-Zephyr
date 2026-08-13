@@ -1,0 +1,150 @@
+<svg width="1200" height="520" viewBox="0 0 1200 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="520" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#060911"/>
+      <stop offset="0.55" stop-color="#090D18"/>
+      <stop offset="1" stop-color="#100B20"/>
+    </linearGradient>
+    <linearGradient id="edge" x1="38" y1="31" x2="1158" y2="490" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#5EEAD4"/>
+      <stop offset="0.48" stop-color="#60A5FA"/>
+      <stop offset="1" stop-color="#A78BFA"/>
+    </linearGradient>
+    <linearGradient id="status" x1="50" y1="0" x2="1150" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2DD4BF"/>
+      <stop offset="0.55" stop-color="#3B82F6"/>
+      <stop offset="1" stop-color="#8B5CF6"/>
+    </linearGradient>
+    <radialGradient id="glowA" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(187 106) rotate(35) scale(390 280)">
+      <stop stop-color="#14B8A6" stop-opacity="0.17"/>
+      <stop offset="1" stop-color="#14B8A6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowB" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1070 450) rotate(-143) scale(410 310)">
+      <stop stop-color="#8B5CF6" stop-opacity="0.19"/>
+      <stop offset="1" stop-color="#8B5CF6" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#94A3B8" stroke-opacity="0.045"/>
+    </pattern>
+    <filter id="softGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+  </defs>
+
+  <rect x="1" y="1" width="1198" height="518" rx="22" fill="url(#bg)"/>
+  <rect x="1" y="1" width="1198" height="518" rx="22" fill="url(#grid)"/>
+  <rect x="1" y="1" width="1198" height="518" rx="22" fill="url(#glowA)"/>
+  <rect x="1" y="1" width="1198" height="518" rx="22" fill="url(#glowB)"/>
+  <rect x="1" y="1" width="1198" height="518" rx="22" stroke="url(#edge)" stroke-opacity="0.48" stroke-width="2"/>
+
+  <!-- window chrome -->
+  <path d="M1 58H1199" stroke="#334155" stroke-opacity="0.7"/>
+  <circle cx="27" cy="29" r="5" fill="#FB7185"/>
+  <circle cx="47" cy="29" r="5" fill="#FBBF24"/>
+  <circle cx="67" cy="29" r="5" fill="#5EEAD4"/>
+  <text x="96" y="34" fill="#64748B" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14">adkid@github: ~/identity</text>
+  <text x="1080" y="34" fill="#475569" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12">CTRL+SHIP</text>
+
+  <!-- activity rail -->
+  <rect x="1" y="59" width="54" height="432" fill="#050810" fill-opacity="0.72"/>
+  <path d="M19 88H35M19 95H35M19 102H29" stroke="#5EEAD4" stroke-width="2" stroke-linecap="round"/>
+  <rect x="19" y="130" width="16" height="16" rx="2" stroke="#475569" stroke-width="2"/>
+  <path d="M20 179L27 172L34 179L27 186L20 179Z" stroke="#475569" stroke-width="2"/>
+  <circle cx="27" cy="221" r="8" stroke="#475569" stroke-width="2"/>
+  <path d="M21 265H33M27 259V271" stroke="#475569" stroke-width="2" stroke-linecap="round"/>
+  <rect x="53" y="76" width="2" height="39" fill="#5EEAD4"/>
+
+  <!-- tab -->
+  <rect x="55" y="59" width="203" height="38" fill="#0B1120"/>
+  <rect x="55" y="59" width="203" height="2" fill="#60A5FA"/>
+  <circle cx="77" cy="78" r="5" fill="#3178C6"/>
+  <text x="91" y="83" fill="#CBD5E1" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13">identity.ts</text>
+  <text x="233" y="83" fill="#64748B" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13">×</text>
+
+  <!-- editor gutter -->
+  <path d="M95 112V459" stroke="#1E293B"/>
+  <g fill="#334155" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" text-anchor="end">
+    <text x="84" y="134">01</text><text x="84" y="168">02</text><text x="84" y="202">03</text>
+    <text x="84" y="236">04</text><text x="84" y="270">05</text><text x="84" y="304">06</text>
+    <text x="84" y="338">07</text><text x="84" y="372">08</text><text x="84" y="406">09</text>
+    <text x="84" y="440">10</text>
+  </g>
+
+  <!-- identity code -->
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
+    <text x="116" y="134" fill="#64748B" font-size="14">// operator profile · verified build</text>
+    <text x="116" y="174" fill="#C084FC" font-size="22" font-weight="700">export const</text>
+    <text x="278" y="174" fill="#F8FAFC" font-size="27" font-weight="800">ADKID_ZEPHYR</text>
+    <text x="511" y="174" fill="#94A3B8" font-size="22">= {</text>
+
+    <text x="146" y="218" fill="#7DD3FC" font-size="17">role</text>
+    <text x="201" y="218" fill="#94A3B8" font-size="17">:</text>
+    <text x="222" y="218" fill="#A7F3D0" font-size="17">"AI Product × Builder"</text>
+    <text x="461" y="218" fill="#94A3B8" font-size="17">,</text>
+
+    <text x="146" y="254" fill="#7DD3FC" font-size="17">focus</text>
+    <text x="211" y="254" fill="#94A3B8" font-size="17">: [</text>
+    <text x="245" y="254" fill="#A7F3D0" font-size="17">"Agent Systems"</text>
+    <text x="395" y="254" fill="#94A3B8" font-size="17">,</text>
+    <text x="416" y="254" fill="#DDD6FE" font-size="17">"FinTech"</text>
+    <text x="511" y="254" fill="#94A3B8" font-size="17">],</text>
+
+    <text x="146" y="290" fill="#7DD3FC" font-size="17">mode</text>
+    <text x="201" y="290" fill="#94A3B8" font-size="17">:</text>
+    <text x="222" y="290" fill="#F9A8D4" font-size="17">"BUILD → VERIFY → SHIP"</text>
+    <text x="461" y="290" fill="#94A3B8" font-size="17">,</text>
+
+    <text x="146" y="326" fill="#7DD3FC" font-size="17">status</text>
+    <text x="221" y="326" fill="#94A3B8" font-size="17">:</text>
+    <text x="242" y="326" fill="#5EEAD4" font-size="17">"OPEN_TO_BUILD"</text>
+    <circle cx="429" cy="320" r="4" fill="#5EEAD4"/>
+    <circle cx="429" cy="320" r="8" fill="#5EEAD4" fill-opacity="0.14"/>
+
+    <text x="146" y="362" fill="#7DD3FC" font-size="17">axiom</text>
+    <text x="211" y="362" fill="#94A3B8" font-size="17">:</text>
+    <text x="232" y="362" fill="#FDE68A" font-size="17">"Build with evidence."</text>
+    <text x="465" y="362" fill="#FDE68A" font-size="17">"Ship with taste."</text>
+
+    <text x="116" y="402" fill="#94A3B8" font-size="22">} as const</text>
+    <text x="237" y="402" fill="#94A3B8" font-size="22">;</text>
+    <rect x="116" y="421" width="10" height="21" fill="#5EEAD4" fill-opacity="0.75"/>
+  </g>
+
+  <!-- console panel -->
+  <rect x="733" y="84" width="427" height="360" rx="13" fill="#050810" fill-opacity="0.8" stroke="#334155"/>
+  <path d="M733 124H1160" stroke="#1E293B"/>
+  <circle cx="755" cy="104" r="4" fill="#5EEAD4"/>
+  <text x="769" y="109" fill="#64748B" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" letter-spacing="1">OUTPUT / GH_UPSTREAM</text>
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="15">
+    <text x="756" y="158" fill="#5EEAD4">❯</text>
+    <text x="780" y="158" fill="#CBD5E1">gh pr view 122684</text>
+    <text x="756" y="192" fill="#64748B">repository</text>
+    <text x="862" y="192" fill="#E2E8F0">openclaw/openclaw</text>
+    <text x="756" y="224" fill="#64748B">severity</text>
+    <text x="862" y="224" fill="#F9A8D4">P1 · USER_FACING</text>
+    <text x="756" y="256" fill="#64748B">state</text>
+    <rect x="862" y="238" width="91" height="25" rx="12.5" fill="#5EEAD4" fill-opacity="0.12" stroke="#5EEAD4" stroke-opacity="0.45"/>
+    <circle cx="878" cy="250.5" r="4" fill="#5EEAD4"/>
+    <text x="889" y="256" fill="#A7F3D0" font-size="13" font-weight="700">MERGED</text>
+    <text x="756" y="299" fill="#5EEAD4">✓</text>
+    <text x="780" y="299" fill="#CBD5E1">fix accepted upstream</text>
+    <text x="756" y="331" fill="#5EEAD4">✓</text>
+    <text x="780" y="331" fill="#CBD5E1">regression coverage added</text>
+    <text x="756" y="363" fill="#5EEAD4">✓</text>
+    <text x="780" y="363" fill="#CBD5E1">real CLI path verified</text>
+    <text x="756" y="407" fill="#64748B">signal:</text>
+    <text x="824" y="407" fill="#A78BFA">CONTRIBUTOR_AUTHENTICATED</text>
+  </g>
+
+  <!-- status bar -->
+  <rect x="1" y="491" width="1198" height="28" rx="0" fill="url(#status)" fill-opacity="0.88"/>
+  <path d="M1 491H1199" stroke="#93C5FD" stroke-opacity="0.5"/>
+  <g fill="#06101A" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="700">
+    <text x="20" y="510">◈ MAIN</text>
+    <text x="104" y="510">0 ERRORS</text>
+    <text x="207" y="510">0 WARNINGS</text>
+    <text x="955" y="510">UTF-8</text>
+    <text x="1015" y="510">AI_NATIVE</text>
+    <text x="1101" y="510">ONLINE ●</text>
+  </g>
+</svg>
