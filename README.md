@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/matrix-card.svg" width="100%" alt="Feng — AI Product Manager and Builder" />
+  <img src="./assets/matrix-card.svg" width="100%" alt="Feng — Builder and open-source contributor" />
 </p>
 
 <samp>

@@ -51,9 +51,9 @@
     <text x="1168" y="30" fill="#2B8F52" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="11" text-anchor="end">SESSION  //  ACTIVE</text>
 
     <text x="31" y="105" fill="#E8FFF0" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="42" font-weight="750" letter-spacing="5">FENG</text>
-    <text x="34" y="134" fill="#00FF66" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="14" font-weight="700" letter-spacing="2">AI PRODUCT MANAGER  ×  BUILDER</text>
+    <text x="34" y="134" fill="#00FF66" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="14" font-weight="700" letter-spacing="2">BUILDER  ×  OPEN-SOURCE CONTRIBUTOR</text>
 
-    <text x="34" y="174" fill="#88A993" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="15">&gt; turning ambiguous problems into useful systems that ship</text>
+    <text x="34" y="174" fill="#88A993" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="15">&gt; useful agents, fintech tools, and developer workflows</text>
     <rect x="34" y="187" width="9" height="17" fill="#00FF66" opacity="0.9" filter="url(#soft-glow)"/>
 
     <path d="M814 69V197" stroke="#00FF66" stroke-opacity="0.22"/>
