@@ -1,8 +1,7 @@
 <p align="center">
-  <img src="./assets/matrix-card.svg" width="100%" alt="Feng — Builder and open-source contributor" />
+  <img src="./assets/matrix-card.svg" width="100%" alt="Feng — building agent systems, fintech tools, and developer workflows" />
 </p>
 
 <samp>
-  <b>BUILDING</b>&nbsp;&nbsp;agent systems · fintech tools · developer workflows<br>
-  <b>CONTRIBUTING</b>&nbsp;&nbsp;<a href="https://github.com/openclaw/openclaw/pull/122684">openclaw/openclaw #122684</a>
+  <b>OPEN SOURCE</b>&nbsp;&nbsp;<a href="https://github.com/openclaw/openclaw/pull/122684">openclaw/openclaw — hydrated CLI images from agent workspaces</a>
 </samp>
