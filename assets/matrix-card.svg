@@ -48,28 +48,28 @@
     <path d="M28 49H1172" stroke="#113821"/>
     <circle cx="31" cy="25" r="4" fill="#00FF66" filter="url(#soft-glow)"/>
     <text x="45" y="30" fill="#73FFAA" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="13">feng@github:~$ ./identity</text>
-    <text x="1168" y="30" fill="#2B8F52" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="11" text-anchor="end">SESSION  //  ACTIVE</text>
+    <text x="1168" y="30" fill="#2B8F52" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="11" text-anchor="end">SHENZHEN  //  UTC+8</text>
 
     <text x="31" y="105" fill="#E8FFF0" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="42" font-weight="750" letter-spacing="5">FENG</text>
-    <text x="34" y="134" fill="#00FF66" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="14" font-weight="700" letter-spacing="2">BUILDER  ×  OPEN-SOURCE CONTRIBUTOR</text>
+    <text x="34" y="134" fill="#00FF66" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="14" font-weight="700" letter-spacing="2">AGENT SYSTEMS  ×  FINTECH TOOLS</text>
 
-    <text x="34" y="174" fill="#88A993" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="15">&gt; useful agents, fintech tools, and developer workflows</text>
+    <text x="34" y="174" fill="#88A993" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="15">&gt; practical software for research, workflows, and real decisions</text>
     <rect x="34" y="187" width="9" height="17" fill="#00FF66" opacity="0.9" filter="url(#soft-glow)"/>
 
     <path d="M814 69V197" stroke="#00FF66" stroke-opacity="0.22"/>
     <rect x="842" y="73" width="326" height="120" rx="8" fill="#020805" fill-opacity="0.88" stroke="#00FF66" stroke-opacity="0.22"/>
-    <text x="862" y="96" fill="#00FF66" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="11" font-weight="700" letter-spacing="1.5">SYSTEM // IDENTITY</text>
+    <text x="862" y="96" fill="#00FF66" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="11" font-weight="700" letter-spacing="1.5">GITHUB // OUTPUT</text>
     <path d="M862 106H1148" stroke="#124828"/>
-    <text x="862" y="128" fill="#3D8157" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="11">STATUS</text>
-    <text x="1148" y="128" fill="#00FF66" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="11" font-weight="700" text-anchor="end">ONLINE</text>
-    <text x="862" y="151" fill="#3D8157" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="11">MODE</text>
-    <text x="1148" y="151" fill="#B8F7CD" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="11" text-anchor="end">BUILD / SHIP</text>
-    <text x="862" y="174" fill="#3D8157" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="11">SIGNAL</text>
-    <text x="1148" y="174" fill="#B8F7CD" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="11" text-anchor="end">OPEN SOURCE</text>
+    <text x="862" y="128" fill="#3D8157" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="11">ORIGINAL REPOS</text>
+    <text id="original-repos-value" x="1148" y="128" fill="#B8F7CD" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="11" font-weight="700" text-anchor="end">17</text>
+    <text x="862" y="151" fill="#3D8157" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="11">STARS EARNED</text>
+    <text id="stars-earned-value" x="1148" y="151" fill="#00FF66" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="11" font-weight="700" text-anchor="end">85</text>
+    <text x="862" y="174" fill="#3D8157" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="11">CONTRIBUTING</text>
+    <text x="1148" y="174" fill="#B8F7CD" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="11" text-anchor="end">OPENCLAW</text>
 
     <path d="M28 218H1172" stroke="url(#line)" stroke-opacity="0.42"/>
-    <text x="31" y="239" fill="#347B4E" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="11" letter-spacing="1">AGENTS  //  FINTECH  //  PYTHON  //  TYPESCRIPT</text>
-    <text x="1168" y="239" fill="#00FF66" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="11" font-weight="700" text-anchor="end">BUILD → TEST → CONTRIBUTE</text>
+    <text x="31" y="239" fill="#347B4E" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="11" letter-spacing="1">PYTHON  //  TYPESCRIPT</text>
+    <text x="1168" y="239" fill="#00FF66" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="11" font-weight="700" text-anchor="end">github.com/Adkid-Zephyr</text>
 
     <rect width="1200" height="250" fill="url(#scanlines)"/>
   </g>
