@@ -1,0 +1,22 @@
+<svg width="1200" height="210" viewBox="0 0 1200 210" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="210" gradientUnits="userSpaceOnUse"><stop stop-color="#020604"/><stop offset="0.62" stop-color="#121006"/><stop offset="1" stop-color="#020604"/></linearGradient>
+    <pattern id="scanlines" width="4" height="4" patternUnits="userSpaceOnUse"><path d="M0 3.5H4" stroke="#FFE39A" stroke-opacity="0.035"/></pattern>
+  </defs>
+  <rect x="1" y="1" width="1198" height="208" rx="14" fill="url(#bg)" stroke="#F5B942" stroke-opacity="0.42" stroke-width="2"/>
+  <path d="M28 43H1172" stroke="#3D3211"/><circle cx="30" cy="22" r="4" fill="#F5B942"/>
+  <text x="44" y="27" fill="#FFE39A" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="12">gh://NousResearch/hermes-agent/issues/88113</text>
+  <rect x="940" y="10" width="232" height="25" rx="12.5" fill="#F5B942" fill-opacity="0.08" stroke="#F5B942" stroke-opacity="0.42"/>
+  <text x="1056" y="27" fill="#FFE39A" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="11" font-weight="700" text-anchor="middle">P1 · REPORT VALIDATED</text>
+  <text x="30" y="76" fill="#F5B942" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="12" font-weight="700" letter-spacing="1">COMMUNITY QUALITY · BUG REPORT · FIX SHIPPED</text>
+  <text x="30" y="111" fill="#FFF8E7" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="25" font-weight="750">Prevent subagent worktree cleanup data loss</text>
+  <text x="30" y="146" fill="#B7AB87" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="14">Independent reproduction · Root-cause analysis · Fail-closed design</text>
+  <text x="30" y="177" fill="#8F7E4F" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="12">Reported by Adkid-Zephyr · Maintainer-validated</text>
+  <path d="M820 61V184" stroke="#F5B942" stroke-opacity="0.22"/>
+  <text x="850" y="78" fill="#8F7E4F" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="10">EVIDENCE TYPE</text>
+  <text x="850" y="101" fill="#FFE39A" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="13" font-weight="700">VALIDATED DIAGNOSTIC</text>
+  <text x="850" y="132" fill="#8F7E4F" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="10">RESOLUTION</text>
+  <text x="850" y="155" fill="#FFF8E7" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="13">PR #88419 · MERGED</text>
+  <text x="850" y="181" fill="#F5B942" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="11" font-weight="700">FIX CODE: UPSTREAM AUTHORS</text>
+  <rect x="1" y="1" width="1198" height="208" rx="14" fill="url(#scanlines)"/>
+</svg>
