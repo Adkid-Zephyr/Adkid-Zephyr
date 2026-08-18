@@ -1,0 +1,22 @@
+<svg width="1200" height="210" viewBox="0 0 1200 210" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="210" gradientUnits="userSpaceOnUse"><stop stop-color="#020604"/><stop offset="0.62" stop-color="#06130B"/><stop offset="1" stop-color="#020604"/></linearGradient>
+    <pattern id="scanlines" width="4" height="4" patternUnits="userSpaceOnUse"><path d="M0 3.5H4" stroke="#89FFB6" stroke-opacity="0.035"/></pattern>
+  </defs>
+  <rect x="1" y="1" width="1198" height="208" rx="14" fill="url(#bg)" stroke="#00FF66" stroke-opacity="0.34" stroke-width="2"/>
+  <path d="M28 43H1172" stroke="#113821"/><circle cx="30" cy="22" r="4" fill="#00FF66"/>
+  <text x="44" y="27" fill="#73FFAA" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="12">gh://openclaw/openclaw/pull/122684</text>
+  <rect x="986" y="10" width="186" height="25" rx="12.5" fill="#00FF66" fill-opacity="0.08" stroke="#00FF66" stroke-opacity="0.38"/>
+  <text x="1079" y="27" fill="#73FFAA" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="11" font-weight="700" text-anchor="middle">P1 · MERGED CODE</text>
+  <text x="30" y="76" fill="#00FF66" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="12" font-weight="700" letter-spacing="1">MERGED / UPSTREAM MAIN</text>
+  <text x="30" y="111" fill="#E8FFF0" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="25" font-weight="750">CLI image hydration for agent workspaces</text>
+  <text x="30" y="146" fill="#88A993" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="14">Authored fix · regression coverage · upstream main</text>
+  <text x="30" y="177" fill="#4F8A64" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="12">PR by Adkid-Zephyr · verified authored commit</text>
+  <path d="M820 61V184" stroke="#00FF66" stroke-opacity="0.2"/>
+  <text x="850" y="78" fill="#3D8157" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="10">REPOSITORY</text>
+  <text x="850" y="101" fill="#B8F7CD" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="14" font-weight="700">openclaw/openclaw</text>
+  <text x="850" y="132" fill="#3D8157" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="10">PUBLIC PROOF</text>
+  <text x="850" y="155" fill="#E8FFF0" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="13">PR #122684</text>
+  <text x="850" y="181" fill="#00FF66" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="11" font-weight="700">AUTHORED CODE ✓</text>
+  <rect x="1" y="1" width="1198" height="208" rx="14" fill="url(#scanlines)"/>
+</svg>

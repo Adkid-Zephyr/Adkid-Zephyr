@@ -1,4 +1,4 @@
-name: Refresh profile stats
+name: Refresh profile evidence
 
 on:
   schedule:
@@ -12,48 +12,28 @@ jobs:
   refresh:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
+      - name: Check out profile repository
+        uses: actions/checkout@v7
 
-      - name: Read GitHub stats
-        id: stats
+      - name: Refresh generated profile evidence
         env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          result=$(gh api --paginate --slurp \
-            "users/$GITHUB_REPOSITORY_OWNER/repos?per_page=100&type=owner")
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 scripts/update_profile.py
 
-          echo "repos=$(jq '[.[][] | select(.fork == false)] | length' <<<"$result")" >> "$GITHUB_OUTPUT"
-          echo "stars=$(jq '[.[][] | select(.fork == false) | .stargazers_count] | add // 0' <<<"$result")" >> "$GITHUB_OUTPUT"
-
-      - name: Update card
-        env:
-          ORIGINAL_REPOS: ${{ steps.stats.outputs.repos }}
-          STARS_EARNED: ${{ steps.stats.outputs.stars }}
+      - name: Validate generated SVG files
         run: |
           python3 - <<'PY'
-          import os
-          import re
           from pathlib import Path
+          import xml.etree.ElementTree as ET
 
-          path = Path("assets/matrix-card.svg")
-          svg = path.read_text()
-
-          for element_id, value in {
-              "original-repos-value": os.environ["ORIGINAL_REPOS"],
-              "stars-earned-value": os.environ["STARS_EARNED"],
-          }.items():
-              pattern = rf'(<text id="{re.escape(element_id)}"[^>]*>)[^<]*(</text>)'
-              svg, replacements = re.subn(pattern, rf'\g<1>{value}\g<2>', svg)
-              if replacements != 1:
-                  raise RuntimeError(f"Expected one {element_id} element, found {replacements}")
-
-          path.write_text(svg)
+          for svg in Path("assets").rglob("*.svg"):
+              ET.parse(svg)
           PY
 
-      - name: Commit changed stats
+      - name: Commit changed profile evidence
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/matrix-card.svg
-          git diff --cached --quiet || git commit -m "Update profile stats"
+          git add README.md assets/
+          git diff --cached --quiet || git commit -m "Update profile evidence"
           git push
