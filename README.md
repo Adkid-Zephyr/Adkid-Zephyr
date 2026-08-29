@@ -6,3 +6,4 @@
 
 - **[OpenClaw](https://github.com/openclaw/openclaw)** — [P1 code contribution](https://github.com/openclaw/openclaw/pull/122684): CLI image hydration for agent workspaces, merged into upstream `main`.
 - **[Hermes Agent](https://github.com/NousResearch/hermes-agent)** — [P1 diagnostic contribution](https://github.com/NousResearch/hermes-agent/issues/88113): reproduced and traced worktree-cleanup data loss; [maintainer-validated](https://github.com/NousResearch/hermes-agent/issues/88113#issuecomment-5316817959), then [fixed upstream](https://github.com/NousResearch/hermes-agent/pull/88419) by project contributors.
+- **[Apache OpenServerless MCP](https://github.com/apache/openserverless-mcp)** — Merged code contributions [#11](https://github.com/apache/openserverless-mcp/pull/11) and [#12](https://github.com/apache/openserverless-mcp/pull/12): reject incomplete generated endpoints and return action results directly to MCP clients, both merged into upstream `main`.
