@@ -65,7 +65,7 @@
     <text x="862" y="151" fill="#3D8157" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="11">STARS EARNED</text>
     <text id="stars-earned-value" x="1148" y="151" fill="#00FF66" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="11" font-weight="700" text-anchor="end">251</text>
     <text x="862" y="174" fill="#3D8157" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="11">UPSTREAM MERGES</text>
-    <text id="upstream-merges-value" x="1148" y="174" fill="#B8F7CD" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="11" font-weight="700" text-anchor="end">3</text>
+    <text id="upstream-merges-value" x="1148" y="174" fill="#B8F7CD" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="11" font-weight="700" text-anchor="end">4</text>
 
     <path d="M28 218H1172" stroke="url(#line)" stroke-opacity="0.42"/>
     <text x="31" y="239" fill="#347B4E" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="11" letter-spacing="1">PYTHON  //  TYPESCRIPT</text>
