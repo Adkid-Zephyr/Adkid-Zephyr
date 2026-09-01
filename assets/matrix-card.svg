@@ -63,7 +63,7 @@
     <text x="862" y="128" fill="#3D8157" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="11">ORIGINAL REPOS</text>
     <text id="original-repos-value" x="1148" y="128" fill="#B8F7CD" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="11" font-weight="700" text-anchor="end">17</text>
     <text x="862" y="151" fill="#3D8157" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="11">STARS EARNED</text>
-    <text id="stars-earned-value" x="1148" y="151" fill="#00FF66" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="11" font-weight="700" text-anchor="end">251</text>
+    <text id="stars-earned-value" x="1148" y="151" fill="#00FF66" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="11" font-weight="700" text-anchor="end">301</text>
     <text x="862" y="174" fill="#3D8157" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="11">UPSTREAM MERGES</text>
     <text id="upstream-merges-value" x="1148" y="174" fill="#B8F7CD" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="11" font-weight="700" text-anchor="end">4</text>
 
